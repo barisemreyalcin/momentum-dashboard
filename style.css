@@ -13,4 +13,22 @@ body {
     background-size: cover;
     color: #fdf8f8;
     text-shadow: 1px 1px 2px #4f4f4f;
+    margin: 0;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.middle {
+    text-align: center;
 }
