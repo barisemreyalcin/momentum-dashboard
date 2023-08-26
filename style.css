@@ -8,6 +8,9 @@ html {
 
 body {
     font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
     background: no-repeat center center fixed;
     background-size: cover;
+    color: #fdf8f8;
+    text-shadow: 1px 1px 2px #4f4f4f;
 }
