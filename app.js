@@ -2,6 +2,7 @@ const authorEl = document.getElementById("author");
 const cryptoHeaderEl = document.getElementById("crypto-header");
 const cryptoDataEl = document.getElementById("crypto-data");
 const timeEl = document.getElementById("time");
+const weatherEl = document.getElementById("weather");
 
 // background image
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=view&query=nature&query=city&query=sky&query=space&query=architecture")
@@ -24,7 +25,6 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
         return response.json();
     })
     .then(data => {
-        console.log(data);
         cryptoHeaderEl.innerHTML = `
             <img src=${data.image.small}>
             <span>${data.name}</span>
@@ -53,3 +53,29 @@ function getTime() {
     timeEl.textContent = time
 } 
 setInterval(getTime, 1000);
+
+// weather
+navigator.geolocation.getCurrentPosition((position) => {
+    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
+    .then(response => {
+        if(!response.ok) {
+            throw Error("Weather data is not available")
+        } else {
+            return response.json();
+        }
+    })
+    .then(data => {
+        console.log(data)
+        const weatherIconUrl = "https://openweathermap.org/img/wn/01d@2x.png";
+        weatherEl.innerHTML = `
+            <div id="weather-info">
+                <img src=${weatherIconUrl}>
+                <span>${Math.round(data.main.temp)}°<span>
+            </div>
+            <div id="city">
+                <span>${data.name}<span>
+            </div>
+        `
+    })
+    .catch(err => console.log(err))
+});

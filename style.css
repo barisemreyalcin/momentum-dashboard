@@ -25,17 +25,21 @@ main {
 
 p, #crypto, #weather {
     margin: 0;
-    padding: 1em;
 }
 
 .top {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 1em;
 }
 
 .middle {
     text-align: center;
+}
+
+.bottom {
+    padding: 1em;
 }
 
 #crypto {
@@ -46,6 +50,7 @@ p, #crypto, #weather {
     display: flex;
     align-items: center;
     gap: .4em;
+    padding-top: 1em;
 }
 
 #crypto-data {
@@ -63,6 +68,30 @@ p, #crypto, #weather {
     display: flex;
     align-items: center;
     gap: .5em;
+}
+
+#weather {
+    align-self: flex-start;
+}
+
+#weather-info {
+    display: flex;
+    align-items: center;
+}
+
+#weather-info img {
+    margin-right: -1rem;
+    width: 5em;
+}
+
+#weather-info span {
+    font-size: 2.1rem;
+}
+
+#city {
+    font-size: 1.5rem;
+    text-align: right;
+    margin-top: -1em;
 }
 
 #time {
