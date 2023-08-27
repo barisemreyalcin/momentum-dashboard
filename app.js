@@ -1,9 +1,10 @@
 const authorEl = document.getElementById("author");
 const cryptoHeaderEl = document.getElementById("crypto-header");
 const cryptoDataEl = document.getElementById("crypto-data");
+const timeEl = document.getElementById("time");
 
 // background image
-fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=view&query=nature&query=city")
+fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=view&query=nature&query=city&query=sky&query=space&query=architecture")
     .then(response => response.json())
     .then(data => {
         document.body.style.backgroundImage = `url(${data.urls.regular})`;
@@ -44,3 +45,11 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
         `
     })
     .catch(error => console.log(error))
+
+// display current time
+function getTime() {
+    const date = new Date();
+    const time = date.toLocaleTimeString("en-US", {timeStyle: "short"});
+    timeEl.textContent = time
+} 
+setInterval(getTime, 1000);

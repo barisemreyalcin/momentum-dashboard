@@ -64,3 +64,7 @@ p, #crypto, #weather {
     align-items: center;
     gap: .5em;
 }
+
+#time {
+    font-size: 6rem;
+}
