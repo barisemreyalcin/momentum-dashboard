@@ -8,7 +8,7 @@ const weatherEl = document.getElementById("weather");
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=view&query=nature&query=city&query=sky&query=space&query=architecture")
     .then(response => response.json())
     .then(data => {
-        document.body.style.backgroundImage = `url(${data.urls.regular})`;
+        document.body.style.backgroundImage = `url(${data.urls.full})`;
         authorEl.textContent = `By: ${data.user.name}`;
     })
     .catch(error => {
@@ -65,7 +65,6 @@ navigator.geolocation.getCurrentPosition((position) => {
         }
     })
     .then(data => {
-        console.log(data)
         const weatherIconUrl = "https://openweathermap.org/img/wn/01d@2x.png";
         weatherEl.innerHTML = `
             <div id="weather-info">
