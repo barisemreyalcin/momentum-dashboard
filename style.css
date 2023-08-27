@@ -23,7 +23,7 @@ main {
     justify-content: space-between;
 }
 
-p {
+p, #crypto, #weather {
     margin: 0;
     padding: 1em;
 }
@@ -36,4 +36,31 @@ p {
 
 .middle {
     text-align: center;
+}
+
+#crypto {
+    font-size: 2.1rem;
+}
+
+#crypto-header {
+    display: flex;
+    align-items: center;
+    gap: .4em;
+}
+
+#crypto-data {
+    font-size: 1.5rem;
+    padding-left: .5em;
+    padding-top: .5em;
+}
+
+#crypto-data img {
+    width: 1.3em;
+}
+
+#crypto-data p {
+    padding: .2em 0;
+    display: flex;
+    align-items: center;
+    gap: .5em;
 }
